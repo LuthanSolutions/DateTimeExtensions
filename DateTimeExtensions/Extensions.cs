@@ -5,6 +5,8 @@
 /// </summary>
 public static class Extensions
 {
+    private const string LastBeforeFirstErrorMessage = "lastDateTime cannot be before firstDateTime";
+
     /// <summary>
     /// Returns true if dateTime is before value
     /// </summary>
@@ -50,7 +52,7 @@ public static class Extensions
     /// <returns>bool</returns>
     /// <exception cref="ArgumentException">If lastDateTime is before firstDateTime</exception>
     public static bool IsBetweenInclusive(this DateTime dateTime, DateTime firstDateTime, DateTime lastDateTime) =>
-        lastDateTime < firstDateTime ? throw new ArgumentException("lastDateTime cannot be before firstDateTime") :
+        lastDateTime < firstDateTime ? throw new ArgumentException(LastBeforeFirstErrorMessage) :
             dateTime.ToUniversalTime() >= firstDateTime.ToUniversalTime() && dateTime.ToUniversalTime() <= lastDateTime.ToUniversalTime();
 
     /// <summary>
@@ -62,7 +64,7 @@ public static class Extensions
     /// <returns>bool</returns>
     /// <exception cref="ArgumentException">If lastDateTime is before firstDateTime</exception>
     public static bool IsBetweenExclusive(this DateTime dateTime, DateTime firstDateTime, DateTime lastDateTime) =>
-        lastDateTime < firstDateTime ? throw new ArgumentException("lastDateTime cannot be before firstDateTime") :
+        lastDateTime < firstDateTime ? throw new ArgumentException(LastBeforeFirstErrorMessage) :
             dateTime.ToUniversalTime() > firstDateTime.ToUniversalTime() && dateTime.ToUniversalTime() < lastDateTime.ToUniversalTime();
 
 }
