@@ -1,8 +1,5 @@
 namespace DateTimeExtension.Tests;
 
-using DateTimeExtensions;
-using FluentAssertions;
-
 public class DateTimeExtensionsTests
 {
     private readonly DateTime thisDateTime = new(2024, 1, 20, 14, 47, 53);
