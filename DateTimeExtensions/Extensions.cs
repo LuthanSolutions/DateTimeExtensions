@@ -9,7 +9,7 @@ public static class Extensions
     /// Returns true if dateTime is before value
     /// </summary>
     /// <param name="dateTime">DateTime</param>
-    /// <param name="value">DateTime to comapre</param>
+    /// <param name="value">DateTime to compare</param>
     /// <returns>bool</returns>
     public static bool IsBefore(this DateTime dateTime, DateTime value) =>
         dateTime.ToUniversalTime() < value.ToUniversalTime();
@@ -18,7 +18,7 @@ public static class Extensions
     /// Returns true if dateTime is after value
     /// </summary>
     /// <param name="dateTime">DateTime</param>
-    /// <param name="value">DateTime to comapre</param>
+    /// <param name="value">DateTime to compare</param>
     /// <returns>bool</returns>
     public static bool IsAfter(this DateTime dateTime, DateTime value) =>
         dateTime.ToUniversalTime() > value.ToUniversalTime();
@@ -27,7 +27,7 @@ public static class Extensions
     /// Returns true if dateTime is before or equals value
     /// </summary>
     /// <param name="dateTime">DateTime</param>
-    /// <param name="value">DateTime to comapre</param>
+    /// <param name="value">DateTime to compare</param>
     /// <returns>bool</returns>
     public static bool IsBeforeOrEqual(this DateTime dateTime, DateTime value) =>
         dateTime.ToUniversalTime() <= value.ToUniversalTime();
@@ -36,7 +36,7 @@ public static class Extensions
     /// Returns true if DateTime is after or equals value
     /// </summary>
     /// <param name="dateTime">DateTime</param>
-    /// <param name="value">DateTime to comapre</param>
+    /// <param name="value">DateTime to compare</param>
     /// <returns>bool</returns>
     public static bool IsAfterOrEqual(this DateTime dateTime, DateTime value) =>
         dateTime.ToUniversalTime() >= value.ToUniversalTime();
