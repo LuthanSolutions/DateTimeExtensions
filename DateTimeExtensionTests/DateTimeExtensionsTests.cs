@@ -165,4 +165,28 @@ public class DateTimeExtensionsTests
 
         _ = actual.Should().Be(expected);
     }
+
+    [Fact]
+    public void IsBetweenInclusive_LastDateTimeBeforeFirstDateTime_ThrowsException()
+    {
+        var firstDateTime = this.thisDateTime.AddMilliseconds(1);
+        var lastDateTime = this.thisDateTime;
+
+        void act() => this.thisDateTime.IsBetweenInclusive(firstDateTime, lastDateTime);
+
+        var exception = Assert.Throws<ArgumentException>(() => act());
+        _ = exception.Message.Should().Be("lastDateTime cannot be before firstDateTime");
+    }
+
+    [Fact]
+    public void IsBetweenExclusive_LastDateTimeBeforeFirstDateTime_ThrowsException()
+    {
+        var firstDateTime = this.thisDateTime.AddMilliseconds(1);
+        var lastDateTime = this.thisDateTime;
+
+        void act() => this.thisDateTime.IsBetweenExclusive(firstDateTime, lastDateTime);
+
+        var exception = Assert.Throws<ArgumentException>(() => act());
+        _ = exception.Message.Should().Be("lastDateTime cannot be before firstDateTime");
+    }
 }

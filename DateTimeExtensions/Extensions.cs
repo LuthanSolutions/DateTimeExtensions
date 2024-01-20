@@ -15,11 +15,13 @@ public static class Extensions
         dateTime.ToUniversalTime() >= value.ToUniversalTime();
 
     public static bool IsBetweenInclusive(this DateTime dateTime, DateTime firstDateTime, DateTime lastDateTime) =>
-        dateTime.ToUniversalTime() >= firstDateTime.ToUniversalTime() &&
-        dateTime.ToUniversalTime() <= lastDateTime.ToUniversalTime();
+        lastDateTime < firstDateTime ? throw new ArgumentException("lastDateTime cannot be before firstDateTime")
+            : dateTime.ToUniversalTime() >= firstDateTime.ToUniversalTime()
+            && dateTime.ToUniversalTime() <= lastDateTime.ToUniversalTime();
 
     public static bool IsBetweenExclusive(this DateTime dateTime, DateTime firstDateTime, DateTime lastDateTime) =>
-        dateTime.ToUniversalTime() > firstDateTime.ToUniversalTime() &&
-        dateTime.ToUniversalTime() < lastDateTime.ToUniversalTime();
+        lastDateTime < firstDateTime ? throw new ArgumentException("lastDateTime cannot be before firstDateTime")
+            : dateTime.ToUniversalTime() > firstDateTime.ToUniversalTime()
+            && dateTime.ToUniversalTime() < lastDateTime.ToUniversalTime();
 
 }
