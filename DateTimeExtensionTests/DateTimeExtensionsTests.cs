@@ -2,7 +2,7 @@ namespace DateTimeExtension.Tests;
 
 public class DateTimeExtensionsTests
 {
-    private readonly DateTime thisDateTime = new(2024, 1, 20, 14, 47, 53);
+    private readonly DateTime thisDateTime = DateTime.UtcNow;
 
     [Theory]
     [InlineData(0, 0, 0, 0, 0, 0, 0, false)]

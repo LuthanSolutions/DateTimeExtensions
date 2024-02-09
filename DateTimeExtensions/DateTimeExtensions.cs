@@ -3,7 +3,7 @@
 /// <summary>
 /// Extensions to System.DateTime
 /// </summary>
-public static class Extensions
+public static class DateTimeExtensions
 {
     private const string LastBeforeFirstErrorMessage = "lastDateTime cannot be before firstDateTime";
 
